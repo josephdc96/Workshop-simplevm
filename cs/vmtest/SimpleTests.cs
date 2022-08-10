@@ -1,3 +1,5 @@
+using vm;
+
 namespace vmtest;
 
 [TestClass]
