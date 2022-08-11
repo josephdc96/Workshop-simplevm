@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "vmtest", "vmtest\vmtest.csp
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "app", "app\app.csproj", "{E08318F4-63C6-4883-A465-6E77204E817B}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "assembler", "assembler\assembler.csproj", "{6A46DC7D-AF6D-4FDB-A00A-55098E301A9C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -30,5 +32,9 @@ Global
 		{E08318F4-63C6-4883-A465-6E77204E817B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E08318F4-63C6-4883-A465-6E77204E817B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E08318F4-63C6-4883-A465-6E77204E817B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6A46DC7D-AF6D-4FDB-A00A-55098E301A9C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6A46DC7D-AF6D-4FDB-A00A-55098E301A9C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6A46DC7D-AF6D-4FDB-A00A-55098E301A9C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6A46DC7D-AF6D-4FDB-A00A-55098E301A9C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

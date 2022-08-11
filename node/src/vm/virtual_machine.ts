@@ -83,7 +83,7 @@ export class VirtualMachine {
 
     public Pop(): number {
         this.Trace("Pop");
-        const result = this.stack[this.SP - 1];
+        const result = this.stack[this.SP];
         this.SP--;
         this.Trace(` -->  Stack: ${this.stack}`);
         return result;
@@ -203,7 +203,7 @@ export class VirtualMachine {
                 break;
             case Bytecode.SIGMUL:
                 const sigmul = this.Pop();
-                let sigprod = 0;
+                let sigprod = 1;
                 for (let i = 0; i < sigmul; i++) {
                     sigprod *= this.Pop();
                 }
@@ -224,25 +224,25 @@ export class VirtualMachine {
             case Bytecode.GT:
                 const gt_b = this.Pop();
                 const gt_a = this.Pop();
-                const gt = gt_a >= gt_b;
+                const gt = gt_a > gt_b;
                 this.Push(gt ? 1 : 0);
                 break;
             case Bytecode.LT:
                 const lt_b = this.Pop();
                 const lt_a = this.Pop();
-                const lt = lt_a === lt_b;
+                const lt = lt_a < lt_b;
                 this.Push(lt ? 1 : 0);
                 break;
             case Bytecode.GTE:
                 const gte_b = this.Pop();
                 const gte_a = this.Pop();
-                const gte = gte_a === gte_b;
+                const gte = gte_a >= gte_b;
                 this.Push(gte ? 1 : 0);
                 break;
             case Bytecode.LTE:
                 const lte_b = this.Pop();
                 const lte_a = this.Pop();
-                const lte = lte_a === lte_b;
+                const lte = lte_a <= lte_b;
                 this.Push(lte ? 1 : 0);
                 break;
             case Bytecode.JMP:
@@ -360,6 +360,7 @@ export class VirtualMachine {
                     const operand = (code[this.IP + 1] as number);
                     this.IP++;
                     this.Execute1(opcode, [operand]);
+                    break;
 
                 case Bytecode.HALT:
                     return;
